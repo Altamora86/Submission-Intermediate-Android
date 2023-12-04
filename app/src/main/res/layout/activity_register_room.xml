@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="20dp"
+    tools:context=".view.register.SignupActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layout_register_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btn_back_to_login"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_button"
+                android:translationZ="0dp"
+                android:alpha="0"
+                tools:alpha="500"
+                android:src="@drawable/ic_back"
+                android:contentDescription="@string/back_to_login_description" />
+
+            <ImageView
+                android:id="@+id/image_logo"
+                android:transitionName="profile"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal"
+                android:alpha="0"
+                tools:alpha="500"
+                android:src="@drawable/ic_storyapp" />
+
+            <TextView
+                android:id="@+id/tv_Welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/welcome_title"
+                android:textSize="24sp"
+                android:alpha="0"
+                tools:alpha="500"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_Description2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="18dp"
+                android:text="@string/description2"
+                android:alpha="0"
+                tools:alpha="500"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/tv_name_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/name_title"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:alpha="0"
+                tools:alpha="500"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Description2" />
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:padding="16dp"
+                android:maxLines="1"
+                android:hint="@string/name_hint"
+                android:background="@drawable/background_edit_text"
+                android:textColor="@color/black"
+                android:alpha="0"
+                tools:alpha="500"
+                app:layout_constraintTop_toBottomOf="@id/tv_name_title"/>
+            <TextView
+                android:id="@+id/tv_email_title"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/email_title"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:alpha="0"
+                tools:alpha="500"
+                app:layout_constraintTop_toBottomOf="@+id/tv_Description"/>
+
+            <com.tugas.submissionawal.customview.EmailActivity
+                android:id="@+id/edt_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_edit_text"
+                android:padding="16dp"
+                android:inputType="textEmailAddress"
+                android:hint="@string/email"
+                android:translationZ="0dp"
+                android:textColor="@color/black"
+                android:alpha="0"
+                tools:alpha="500"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <TextView
+                android:id="@+id/tv_password_title"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/password_title"
+                app:layout_constraintStart_toStartOf="parent"
+                android:alpha="0"
+                tools:alpha="500"
+                app:layout_constraintTop_toBottomOf="@id/edt_Email" />
+
+            <com.tugas.submissionawal.customview.PasswordActivity
+                android:id="@+id/edt_Password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
+                android:background="@drawable/background_edit_text"
+                android:inputType="textPassword"
+                android:translationZ="0dp"
+                android:textColor="@color/black"
+                android:alpha="0"
+                tools:alpha="500"
+                android:hint="@string/password"/>
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/background_button"
+                app:backgroundTint="@null"
+                android:translationZ="0dp"
+                android:alpha="0"
+                tools:alpha="500"
+                android:text="@string/registerbutton" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
